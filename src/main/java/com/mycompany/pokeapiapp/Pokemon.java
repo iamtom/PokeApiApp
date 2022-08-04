@@ -9,27 +9,43 @@ import java.util.ArrayList;
  * @author Tom
  */
 public class Pokemon {   
-    private ArrayList<PersonalAbilityInfo> abilities;   
-    @SerializedName("base_experience") //TODO serialize names for other attributes where needed
+    private ArrayList<PokemonAbilityInfo> abilities; 
+    
+    @SerializedName("base_experience")
     private Double baseExperience;
-    private ArrayList forms;
-    private ArrayList game_indices;
+    
+    private ArrayList<PokemonForm> forms;
+    
+    @SerializedName("game_indices")
+    private ArrayList<PokemonGameIndex> gameIndices;
+    
     private Double height;
-    private ArrayList held_items;
+    
+    @SerializedName("held_items")
+    private ArrayList<PokemonHeldItem> heldItems; 
+    
     private String id;
-    private Boolean is_default;
-    private String location_area_encounters;
-    private ArrayList moves;
+    
+    @SerializedName("is_default")
+    private Boolean isDefault;
+    
+    @SerializedName("location_area_encounters")
+    private String locationAreaEncounters;
+    
+    private ArrayList moves; //TODO
     private String name;
     private Double order;
-    private ArrayList past_types;
+    
+    @SerializedName("past_types")
+    private ArrayList pastTypes; //TODO
+    
     private Species species;
     private Object sprites;
-    private ArrayList stats;
-    private ArrayList types;
+    private ArrayList stats; //TODO
+    private ArrayList types; //TODO
     private Double weight;
 
-    public ArrayList<PersonalAbilityInfo> getAbilities() {
+    public ArrayList<PokemonAbilityInfo> getAbilities() {
         return abilities;
     }
 
@@ -37,32 +53,32 @@ public class Pokemon {
         return baseExperience;
     }
 
-    public ArrayList getForms() {
+    public ArrayList<PokemonForm> getForms() {
         return forms;
     }
 
-    public ArrayList getGame_indices() {
-        return game_indices;
+    public ArrayList<PokemonGameIndex> getGameIndices() {
+        return gameIndices;
     }
 
     public Double getHeight() {
         return height;
     }
 
-    public ArrayList getHeld_items() {
-        return held_items;
+    public ArrayList getHeldItems() {
+        return heldItems;
     }
 
     public String getId() {
         return id;
     }
 
-    public Boolean getIs_default() {
-        return is_default;
+    public Boolean getIsDefault() {
+        return isDefault;
     }
 
-    public String getLocation_area_encounters() {
-        return location_area_encounters;
+    public String getLocationAreaEncounters() {
+        return locationAreaEncounters;
     }
 
     public ArrayList getMoves() {
@@ -77,8 +93,8 @@ public class Pokemon {
         return order;
     }
 
-    public ArrayList getPast_types() {
-        return past_types;
+    public ArrayList getPastTypes() {
+        return pastTypes;
     }
 
     public Species getSpecies() {

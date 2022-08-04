@@ -26,9 +26,9 @@ public class PokeApiApp {
         System.out.println(pokemon.getAbilities().get(1));
         
         //list of all abilities
-        ArrayList<PersonalAbilityInfo> abilities = pokemon.getAbilities();
+        ArrayList<PokemonAbilityInfo> abilities = pokemon.getAbilities();
         
-        PersonalAbilityInfo abilityInfo = abilities.get(0);
+        PokemonAbilityInfo abilityInfo = abilities.get(0);
         System.out.println(abilityInfo.getAbilitySimple());
         System.out.println(abilityInfo.getIsHidden());
         System.out.println(abilityInfo.getSlot());
@@ -39,39 +39,15 @@ public class PokeApiApp {
         
         System.out.println(abilities.get(0).getAbilitySimple().getName());
         
-        System.out.println(pokemon.getForms());
+        System.out.println("Game Indices");
+        ArrayList<PokemonGameIndex> gameIndices = pokemon.getGameIndices();
+        System.out.println(gameIndices);
+        System.out.println(gameIndices.get(0).getVersion());
         
-        System.out.println(pokemon.getBaseExperience());
-       
-        
-        
-        
-        
-
-        
-//        System.out.println(abilities.get(0).getIs_hidden());
-//        System.out.println(abilities.get(0).getSlot());
-//        System.out.println(abilities.get(0).toString());
-        
-//        System.out.println("Ability Test");
-//        Ability ability = abilities.get(0);
-//        
-//        System.out.println(ability.getName());
-//        System.out.println(ability.getUrl());
-//        System.out.println(ability.getIs_hidden());
-//        System.out.println(ability.getSlot());
-//        System.out.println(ability.toString());
-
-//        Ability[] abilitiesTwo = pokemon.getAbilities();
-//        
-//        System.out.println("Array");
-//        System.out.println(abilitiesTwo[0]);
-//        System.out.println("To String");
-//        System.out.println(abilitiesTwo[0].toString());
-//        System.out.println("Name");
-//        System.out.println(abilitiesTwo[0].getName());
-//        System.out.println("Url");
-//        System.out.println(abilitiesTwo[0].getUrl());
+        System.out.println("Held Items");
+        ArrayList<PokemonHeldItem> heldItems = pokemon.getHeldItems();
+        System.out.println(heldItems.get(0).getItem().getName());
+        System.out.println(heldItems.get(0).getVersionDetails().get(0).getVersion().getName());
  
 
         

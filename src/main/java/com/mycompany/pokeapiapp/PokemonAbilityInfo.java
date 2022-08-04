@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
  *
  * @author Tom
  */
-public class PersonalAbilityInfo {
+public class PokemonAbilityInfo {
     private AbilitySimple ability;
     @SerializedName("is_hidden")
     private Boolean isHidden;
