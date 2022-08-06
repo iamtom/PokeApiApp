@@ -4,7 +4,7 @@ package com.mycompany.pokeapiapp;
  *
  * @author Tom
  */
-public class Species {
+public class VersionGroup {
     private String name;
     private String url;
 
@@ -18,8 +18,6 @@ public class Species {
 
     @Override
     public String toString() {
-        return this.name + ", " + this.url;
-    }
-    
-    
+        return "VersionGroup{" + "name=" + name + ", url=" + url + '}';
+    }      
 }

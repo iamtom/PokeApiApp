@@ -1,7 +1,6 @@
 package com.mycompany.pokeapiapp;
 
 import com.google.gson.annotations.SerializedName;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -32,17 +31,17 @@ public class Pokemon {
     @SerializedName("location_area_encounters")
     private String locationAreaEncounters;
     
-    private ArrayList moves; //TODO
+    private ArrayList<PokemonMove> moves;
     private String name;
     private Double order;
     
     @SerializedName("past_types")
-    private ArrayList pastTypes; //TODO
+    private ArrayList<PastType> pastTypes;
     
     private Species species;
-    private Object sprites;
-    private ArrayList stats; //TODO
-    private ArrayList types; //TODO
+    private Object sprites; //TO DO - create proper Sprites object
+    private ArrayList<PokemonStat> stats;
+    private ArrayList<PokemonType> types;
     private Double weight;
 
     public ArrayList<PokemonAbilityInfo> getAbilities() {
@@ -109,7 +108,7 @@ public class Pokemon {
         return stats;
     }
 
-    public ArrayList getTypes() {
+    public ArrayList<PokemonType> getTypes() {
         return types;
     }
 

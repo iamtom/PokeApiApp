@@ -4,7 +4,7 @@ package com.mycompany.pokeapiapp;
  *
  * @author Tom
  */
-public class Species {
+public class TypeSimple {
     private String name;
     private String url;
 
@@ -14,12 +14,11 @@ public class Species {
 
     public String getUrl() {
         return url;
-    }
+    }    
 
     @Override
     public String toString() {
-        return this.name + ", " + this.url;
+        return "TypeSimple{" + "name=" + name + ", url=" + url + '}';
     }
-    
     
 }

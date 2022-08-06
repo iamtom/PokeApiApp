@@ -4,7 +4,7 @@ package com.mycompany.pokeapiapp;
  *
  * @author Tom
  */
-class ItemSimple {
+public class ItemSimple {
     private String name;
     private String url;
 

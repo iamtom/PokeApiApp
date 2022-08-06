@@ -4,7 +4,7 @@ package com.mycompany.pokeapiapp;
  *
  * @author Tom
  */
-public class Species {
+public class MoveSimple {
     private String name;
     private String url;
 
@@ -18,7 +18,7 @@ public class Species {
 
     @Override
     public String toString() {
-        return this.name + ", " + this.url;
+        return "MoveSimple{" + "name=" + name + ", url=" + url + '}';
     }
     
     
