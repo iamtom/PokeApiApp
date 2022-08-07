@@ -1,9 +1,5 @@
 package com.mycompany.pokeapiapp;
 
-/**
- *
- * @author Tom
- */
 public class StatSimple {
     private String name;
     private String url;

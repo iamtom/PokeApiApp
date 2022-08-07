@@ -1,9 +1,5 @@
 package com.mycompany.pokeapiapp;
 
-/**
- *
- * @author Tom
- */
 public class Generation {
     private String name;
     private String url;

@@ -2,10 +2,6 @@ package com.mycompany.pokeapiapp;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- *
- * @author Tom
- */
 public class PokemonAbilityInfo {
     private AbilitySimple ability;
     @SerializedName("is_hidden")

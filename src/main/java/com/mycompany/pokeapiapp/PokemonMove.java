@@ -3,10 +3,6 @@ package com.mycompany.pokeapiapp;
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 
-/**
- *
- * @author Tom
- */
 public class PokemonMove {
     private MoveSimple move;
     

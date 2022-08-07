@@ -1,9 +1,5 @@
 package com.mycompany.pokeapiapp;
 
-/**
- *
- * @author Tom
- */
 public class PokemonType {
    private int slot;
    private TypeSimple type;

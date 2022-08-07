@@ -2,10 +2,6 @@ package com.mycompany.pokeapiapp;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- *
- * @author Tom
- */
 public class MoveVersionGroupDetails {
     @SerializedName("level_learned_at")
     private int levelLearnedAt;

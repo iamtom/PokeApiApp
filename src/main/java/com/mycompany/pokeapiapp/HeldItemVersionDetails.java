@@ -1,9 +1,5 @@
 package com.mycompany.pokeapiapp;
 
-/**
- *
- * @author Tom
- */
 public class HeldItemVersionDetails {
     private String rarity;
     private VersionSimple version;

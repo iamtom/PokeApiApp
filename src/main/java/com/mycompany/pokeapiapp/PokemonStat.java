@@ -2,10 +2,6 @@ package com.mycompany.pokeapiapp;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- *
- * @author Tom
- */
 public class PokemonStat {
     @SerializedName("base_stat")
     private int baseStat;

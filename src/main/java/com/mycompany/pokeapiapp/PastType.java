@@ -2,10 +2,6 @@ package com.mycompany.pokeapiapp;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Tom
- */
 public class PastType {
     private Generation generation;
     private ArrayList<PokemonType> types;
