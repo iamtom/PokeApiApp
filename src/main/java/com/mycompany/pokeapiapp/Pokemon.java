@@ -76,7 +76,7 @@ public class Pokemon {
         return locationAreaEncounters;
     }
 
-    public ArrayList getMoves() {
+    public ArrayList<PokemonMove> getMoves() {
         return moves;
     }
 

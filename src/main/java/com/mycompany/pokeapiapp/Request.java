@@ -7,6 +7,7 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,6 +19,9 @@ public class Request {
     
     private String search(String address) {
         String jsonString = null;
+        //Pokemon names must be lower case or we get a 404
+        //To lower case here rather than in all other search methods
+        address = address.toLowerCase();
         
         try {
             HttpClient httpClient = HttpClient.newHttpClient();            
@@ -45,15 +49,16 @@ public class Request {
         return jsonString; 
     }
     
-    public String getPokemonAsJson (String searchFor) {
+    public String pokemonAsJson (String searchFor) {
         String address = Constants.getApiAddressForPokemon() + searchFor;
         String response = search(address);
         
         return response;
     }
     
-    public Pokemon getPokemon (String searchFor) {
-        String response = getPokemonAsJson(searchFor);
+    public Pokemon searchPokemon (String searchFor) {
+        //searchFor must either be Pokemon name or number
+        String response = pokemonAsJson(searchFor);
                
         Gson gson = new Gson();
 
@@ -61,16 +66,38 @@ public class Request {
         return pokemon;        
     }
     
-    public int getNoOfPokemon() {
-        String address = Constants.getApiAddressForPokemon();
+    public Pokemon searchPokemon (int id) {
+        //searchFor must either be Pokemon name or number
+        String searchFor = String.valueOf(id);
+        String response = pokemonAsJson(searchFor);
+               
+        Gson gson = new Gson();
+
+        Pokemon pokemon = gson.fromJson(response, Pokemon.class);
+        return pokemon;        
+    }
+    
+    public int noOfPokemon() {
+        String address = Constants.getApiAddressForPokemonSpecies();
         String response = search(address);
         
         //remove everything around the count number (number of pokemon)
-        String s = response.substring(9, 13);
+        String s = response.substring(9, 12);
         int number = Integer.valueOf(s);
-        System.out.println("Total number of Pokemon: " + number);
+        //System.out.println("Total number of Pokemon: " + number);
         
         return number; 
+    }
+    
+    public Pokemon randomPokemon() {
+        int max = noOfPokemon();
+        
+        Random random = new Random();
+        int x = random.nextInt(max);
+        
+        Pokemon pokemon = searchPokemon(x);
+        
+        return pokemon;
     }
     
     
