@@ -61,5 +61,17 @@ public class Request {
         return pokemon;        
     }
     
+    public int getNoOfPokemon() {
+        String address = Constants.getApiAddressForPokemon();
+        String response = search(address);
+        
+        //remove everything around the count number (number of pokemon)
+        String s = response.substring(9, 13);
+        int number = Integer.valueOf(s);
+        System.out.println("Total number of Pokemon: " + number);
+        
+        return number; 
+    }
+    
     
 }

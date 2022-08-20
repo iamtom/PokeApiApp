@@ -30,7 +30,7 @@ public class PokeApiApp {
             String learnMethod = moves.get(moveNo).getVersionGroupDetails().get(versionNo).getMoveLearnMethod().getName();
             String versionName = moves.get(moveNo).getVersionGroupDetails().get(versionNo).getVersionGroup().getName();
             System.out.println(moveName + " is learned at level " + levelLearned + " in " + versionName + " by " + learnMethod);
-        
+
             
         }
 
