@@ -37,7 +37,7 @@ public class Request {
             //send the httpRequest (bodyhandlers.ofString tells it we expect a string in return)
             postResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
             
-            System.out.println(postResponse.statusCode()); //200 = found, 404 = not found
+            //System.out.println(postResponse.statusCode()); //200 = found, 404 = not found
             //TO DO handle error codes with catch
             
             jsonString = postResponse.body();                      
