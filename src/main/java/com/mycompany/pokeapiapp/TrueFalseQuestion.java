@@ -14,9 +14,9 @@ public class TrueFalseQuestion {
         Request request = new Request();
         Random random = new Random();
         
-        Pokemon randomPokemon = request.randomPokemon();
-        ArrayList<PokemonMove> moves = randomPokemon.getMoves();
-        PokemonMove move = moves.get(0);
+        Pokemon randomPokemon = new Pokemon();
+        ArrayList<PokemonMove> moves = new ArrayList<PokemonMove>();
+        PokemonMove move = new PokemonMove();
         MoveVersionGroupDetails version;
         String versionName = "version";
         int levelLearnedAt = 0;
@@ -35,11 +35,7 @@ public class TrueFalseQuestion {
             moves = this.pokemon.getMoves();
             
             int randomMoveNo = 0;
-            
-            if (moves.isEmpty()) {
-                //if Pokemon has no moves restart the loop and try again
-                continue;
-            }
+
             if (moves.size() > 1) {
                 //if there is more than one move we choose a random one
                 randomMoveNo = random.nextInt(moves.size() - 1);                
@@ -67,8 +63,18 @@ public class TrueFalseQuestion {
             
             //need a Pokemon method that returns moves learned over a certain level?
             //or one that returns a random move?
+            
+            
             if (levelLearnedAt < 5) {
                 continue;
+            }
+            
+            this.answer = true;
+            //decide whether to keep as true or change levelLearnedAt and make the answer false
+            if (random.nextInt(11) >= 5) {
+                this.answer = false;
+                levelLearnedAt = random.nextInt(101); //because max level is 100
+                System.out.println("Level learned changed and answer changed to false:");
             }
             
             moveName = move.getMove().getName();
@@ -89,6 +95,8 @@ public class TrueFalseQuestion {
     public String getQuestion() {
         return question;
     }
+    
+
     
     
     

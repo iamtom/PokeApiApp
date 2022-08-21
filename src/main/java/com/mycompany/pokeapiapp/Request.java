@@ -40,7 +40,8 @@ public class Request {
             //System.out.println(postResponse.statusCode()); //200 = found, 404 = not found
             //TO DO handle error codes with catch
             
-            jsonString = postResponse.body();                      
+            jsonString = postResponse.body(); 
+
 
         } catch (IOException | InterruptedException | URISyntaxException ex) {
             Logger.getLogger(Request.class.getName()).log(Level.SEVERE, null, ex);
@@ -52,6 +53,9 @@ public class Request {
     public String pokemonAsJson (String searchFor) {
         String address = Constants.getApiAddressForPokemon() + searchFor;
         String response = search(address);
+        
+        //System.out.println("JSON: ");
+        //System.out.println(response);   
         
         return response;
     }
@@ -93,7 +97,8 @@ public class Request {
         int max = noOfPokemon();
         
         Random random = new Random();
-        int x = random.nextInt(max);
+        int x = random.nextInt(max + 1);
+        System.out.println("Random ID: " + x);
         
         Pokemon pokemon = searchPokemon(x);
         
