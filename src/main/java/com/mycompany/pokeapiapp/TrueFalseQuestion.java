@@ -6,11 +6,13 @@ import java.util.Random;
 public class TrueFalseQuestion {
     private Pokemon pokemon;
     private String question;
-    private Boolean answer;
+    private Boolean correctAnswer;
+    private Boolean userAnswer;
     
     public TrueFalseQuestion() {
         //Just move level questions for now
         //pick a pokemon, does it have moves, pick the version group, if level learned <5 then retry
+        //This whole constructor needs cleaning up and improving
         Request request = new Request();
         Random random = new Random();
         
@@ -26,6 +28,11 @@ public class TrueFalseQuestion {
         //should probably incorporate some of the below into a hasMoves method of Pokemon
         while (true) {
             randomPokemon = request.randomPokemon();
+//            move = findRandomMove(randomPokemon, 5);
+//            if (move == null) {
+//                //if the pokemon has no moves then try again
+//                continue;
+//            }
             if (randomPokemon.getMoves().isEmpty()) {
                 //if the Pokemon has no moves start again
                 continue;
@@ -69,10 +76,10 @@ public class TrueFalseQuestion {
                 continue;
             }
             
-            this.answer = true;
+            this.correctAnswer = true;
             //decide whether to keep as true or change levelLearnedAt and make the answer false
             if (random.nextInt(11) >= 5) {
-                this.answer = false;
+                this.correctAnswer = false;
                 levelLearnedAt = random.nextInt(101); //because max level is 100
                 System.out.println("Level learned changed and answer changed to false:");
             }
@@ -96,9 +103,20 @@ public class TrueFalseQuestion {
         return question;
     }
     
+    public Boolean checkAnswer() {
+        Boolean checkResult = null;
+        
+        if (this.userAnswer.equals(this.correctAnswer)) {
+            checkResult = true;
+        }
+        if (!this.userAnswer.equals(this.correctAnswer)) {
+            checkResult = false;
+        }      
+        
+        return checkResult;
+    }
 
-    
-    
-    
-
+    public void setUserAnswer(Boolean userAnswer) {
+        this.userAnswer = userAnswer;
+    }
 }
