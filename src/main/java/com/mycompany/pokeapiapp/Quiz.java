@@ -20,6 +20,24 @@ public class Quiz {
         }        
     }
     
+    public Quiz(String pokemonName, int noOfQuestions) {
+        Request request = new Request();               
+        Pokemon pokemon = request.searchPokemon(pokemonName); 
+        
+        int i = 0;        
+        while (i < noOfQuestions) {
+            try {
+                TrueFalseQuestion question = new TrueFalseQuestion(pokemon);
+                this.questions.add(question);
+                i++;
+                System.out.println(question.getQuestion());
+            } catch (Exception e) {
+                e.getMessage();
+                e.printStackTrace();
+            }
+        }             
+    }
+    
     public void runQuiz() {
         Scanner scanner = new Scanner(System.in);
         

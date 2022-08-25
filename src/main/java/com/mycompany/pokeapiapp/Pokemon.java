@@ -39,6 +39,37 @@ public class Pokemon {
     private ArrayList<PokemonStat> stats;
     private ArrayList<PokemonType> types;
     private Double weight;
+    
+    public ArrayList<PokemonMove> movesContainingMinLevel(int minLevel) {
+        ArrayList<PokemonMove> movesList = this.moves;
+        ArrayList<PokemonMove> filteredMoves = new ArrayList<>();
+        
+        //this removes all moves where the move can never be learned at minLevel or higher
+        //these are often "learned at" level 0 - i.e. TM or tutor moves
+        //this is useful for e.g. "abc learns move at level x. It can also learn it via TM"
+        int i = 0;
+        while (i < movesList.size()) {
+            PokemonMove move = movesList.get(i);
+            ArrayList<MoveVersionGroupDetails> versionDetails = move.getVersionGroupDetails();
+            
+            for (int j = 0; j < versionDetails.size(); j++) {
+                MoveVersionGroupDetails version = versionDetails.get(j);
+                int levelLearnedAt = version.getLevelLearnedAt();
+                if (levelLearnedAt >= minLevel) {
+                    filteredMoves.add(move);
+                }
+            }
+            i++;
+        }
+               
+        return filteredMoves;
+    }
+    
+    public void removeMovesBelowLevel(int minLevel) {
+        for (int i = 0; i < this.moves.size(); i++) {
+            this.moves.get(i).removeVersionsBelowMinLevel(minLevel);
+        }
+    }
 
     public ArrayList<PokemonAbilityInfo> getAbilities() {
         return abilities;
@@ -79,7 +110,7 @@ public class Pokemon {
     public ArrayList<PokemonMove> getMoves() {
         return moves;
     }
-
+    
     public String getName() {
         return name;
     }

@@ -42,7 +42,6 @@ public class Request {
             
             jsonString = postResponse.body(); 
 
-
         } catch (IOException | InterruptedException | URISyntaxException ex) {
             Logger.getLogger(Request.class.getName()).log(Level.SEVERE, null, ex);
         }

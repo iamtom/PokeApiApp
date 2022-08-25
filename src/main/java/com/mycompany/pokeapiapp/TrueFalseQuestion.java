@@ -9,6 +9,15 @@ public class TrueFalseQuestion {
     private Boolean correctAnswer;
     private Boolean userAnswer;
     
+    //random Move questions about a specific pokemon
+    public TrueFalseQuestion(Pokemon pokemon) {        
+        //has it got moves?
+        
+        pokemon.removeMovesBelowLevel(5);                        
+        //choose a random move
+    }
+    
+    //random Pokemon and random Move question
     public TrueFalseQuestion() {
         //Just move level questions for now
         //pick a pokemon, does it have moves, pick the version group, if level learned <5 then retry
@@ -67,9 +76,7 @@ public class TrueFalseQuestion {
             version = move.getVersionGroupDetails().get(randomVersionGroupNo);
             versionName = version.getVersionGroup().getName();
             levelLearnedAt = version.getLevelLearnedAt();
-            
-            //need a Pokemon method that returns moves learned over a certain level?
-            //or one that returns a random move?
+
             
             
             if (levelLearnedAt < 5) {
@@ -89,10 +96,6 @@ public class TrueFalseQuestion {
             break;
             
         }
-
-        //TODO decide if true or false with random number
-        //if false decide a random level for levelLearnedAt
-        //TODO if level learned at is 0 then re-try
         
         this.question = this.pokemon.getName() + " learns " + moveName + 
                 " at level " + levelLearnedAt + " in " + versionName + 
