@@ -4,13 +4,14 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 
 public class PokemonMove {
-    private MoveSimple move;
+    @SerializedName("move")
+    private MoveSimple moveInfo;
     
     @SerializedName("version_group_details")
     private ArrayList<MoveVersionGroupDetails> versionGroupDetails;
 
-    public MoveSimple getMove() {
-        return move;
+    public MoveSimple getMoveInfo() {
+        return moveInfo;
     }
 
     public ArrayList<MoveVersionGroupDetails> getVersionGroupDetails() {
@@ -26,11 +27,11 @@ public class PokemonMove {
                 tempList.add(this.versionGroupDetails.get(i));
             }
         }
-        this.versionGroupDetails = tempList;
+        this.versionGroupDetails = new ArrayList<>(tempList);
     }
     
     @Override
     public String toString() {
-        return "PokemonMove{" + "move=" + move + ", versionGroupDetails=" + versionGroupDetails + '}';
+        return "PokemonMove{" + "move=" + moveInfo + ", versionGroupDetails=" + versionGroupDetails + '}';
     }  
 }

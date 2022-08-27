@@ -8,35 +8,38 @@ public class Quiz {
     public int noOfQuestions; 
     public ArrayList<Question> questions;
     
+    //random move quiz on multiple random pokemon
     public Quiz(int noOfQuestions) {
         this.questions = new ArrayList<>();
         this.noOfQuestions = noOfQuestions;
+        Request request = new Request();
+
                 
         for (int i = 0; i < noOfQuestions; i++) {
-            Question question = new Question();
+            Pokemon pokemon = request.randomPokemon();
+            Question question = new Question(pokemon);
             this.questions.add(question);
             System.out.println(question.getQuestion());        
         }        
     }
     
+    //random move quiz on a specific pokemon
     public Quiz(String pokemonName, int noOfQuestions) {
         this.questions = new ArrayList<>();
         this.noOfQuestions = noOfQuestions;
         Request request = new Request();               
         Pokemon pokemon = request.searchPokemon(pokemonName); 
-        
-        int i = 0;        
-        while (i < noOfQuestions) {
+  
+            
+        for (int i = 0; i < noOfQuestions; i++) {
             try {
                 Question question = new Question(pokemon);
                 this.questions.add(question);
-                i++;
                 System.out.println(question.getQuestion());
             } catch (Exception e) {
                 e.getMessage();
                 e.printStackTrace();
             }
-            i++;
         }             
     }
     

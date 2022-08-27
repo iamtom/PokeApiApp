@@ -66,9 +66,16 @@ public class Pokemon {
     }
     
     public void removeMovesBelowLevel(int minLevel) {
+        ArrayList<PokemonMove> tempList = new ArrayList<>();
         for (int i = 0; i < this.moves.size(); i++) {
+            //remove any version details where the levelLearnedAt is below minLevel
             this.moves.get(i).removeVersionsBelowMinLevel(minLevel);
+            //if this makes the versionGroupDetails arraylist empty then remove the whole move
+            if (!this.moves.get(i).getVersionGroupDetails().isEmpty()) {
+                tempList.add(this.moves.get(i));
+            }
         }
+        this.moves = new ArrayList<>(tempList);
     }
 
     public ArrayList<PokemonAbilityInfo> getAbilities() {

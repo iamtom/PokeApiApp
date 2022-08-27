@@ -1,10 +1,18 @@
 package com.mycompany.pokemonquizapp;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class PokemonQuizApp {
 
-    public static void main(String[] args) {  
+    public static void main(String[] args) { 
+//        Request request = new Request();  
+//        Pokemon pokemon = request.searchPokemon("charmander");
+//        System.out.println(pokemon.getMoves());
+//        pokemon.removeMovesBelowLevel(5); 
+//        System.out.println(pokemon.getMoves().get(1));        
+        
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
