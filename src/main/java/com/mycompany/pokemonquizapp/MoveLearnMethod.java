@@ -1,6 +1,6 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
-public class TypeSimple {
+public class MoveLearnMethod {
     private String name;
     private String url;
 
@@ -10,11 +10,10 @@ public class TypeSimple {
 
     public String getUrl() {
         return url;
-    }    
+    }
 
     @Override
     public String toString() {
-        return "TypeSimple{" + "name=" + name + ", url=" + url + '}';
-    }
-    
+        return "MoveLearnMethod{" + "name=" + name + ", url=" + url + '}';
+    }    
 }

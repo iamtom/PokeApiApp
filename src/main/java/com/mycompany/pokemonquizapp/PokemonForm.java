@@ -1,6 +1,6 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
-public class MoveLearnMethod {
+public class PokemonForm {
     private String name;
     private String url;
 
@@ -14,6 +14,8 @@ public class MoveLearnMethod {
 
     @Override
     public String toString() {
-        return "MoveLearnMethod{" + "name=" + name + ", url=" + url + '}';
-    }    
+        return "PokemonForm{" + "name=" + name + ", url=" + url + '}';
+    }
+    
+    
 }

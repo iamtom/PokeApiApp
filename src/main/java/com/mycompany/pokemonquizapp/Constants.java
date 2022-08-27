@@ -1,4 +1,4 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
 public class Constants {
     private static final String API_ADDRESS = "https://pokeapi.co/api/v2/";

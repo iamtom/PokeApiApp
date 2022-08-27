@@ -1,4 +1,4 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
-public class VersionSimple {
+public class TypeSimple {
     private String name;
     private String url;
 
@@ -10,12 +10,11 @@ public class VersionSimple {
 
     public String getUrl() {
         return url;
-    }
+    }    
 
     @Override
     public String toString() {
-        return "GameVersion{" + "name=" + name + ", url=" + url + '}';
+        return "TypeSimple{" + "name=" + name + ", url=" + url + '}';
     }
-    
     
 }

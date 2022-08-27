@@ -1,16 +1,16 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class TrueFalseQuestion {
+public class Question {
     private Pokemon pokemon;
     private String question;
     private Boolean correctAnswer;
     private Boolean userAnswer;
     
     //random Move questions about a specific pokemon
-    public TrueFalseQuestion(Pokemon pokemon) {        
+    public Question(Pokemon pokemon) {        
         //has it got moves?
         
         pokemon.removeMovesBelowLevel(5);                        
@@ -18,7 +18,7 @@ public class TrueFalseQuestion {
     }
     
     //random Pokemon and random Move question
-    public TrueFalseQuestion() {
+    public Question() {
         //Just move level questions for now
         //pick a pokemon, does it have moves, pick the version group, if level learned <5 then retry
         //This whole constructor needs cleaning up and improving

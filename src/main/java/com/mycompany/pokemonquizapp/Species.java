@@ -1,6 +1,6 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
-public class VersionGroup {
+public class Species {
     private String name;
     private String url;
 
@@ -14,6 +14,8 @@ public class VersionGroup {
 
     @Override
     public String toString() {
-        return "VersionGroup{" + "name=" + name + ", url=" + url + '}';
-    }      
+        return this.name + ", " + this.url;
+    }
+    
+    
 }

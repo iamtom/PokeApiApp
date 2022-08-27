@@ -1,4 +1,4 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -6,28 +6,29 @@ import java.util.Scanner;
 public class Quiz {
     public int score;
     public int noOfQuestions; 
-    public ArrayList<TrueFalseQuestion> questions;
+    public ArrayList<Question> questions;
     
-
     public Quiz(int noOfQuestions) {
         this.questions = new ArrayList<>();
         this.noOfQuestions = noOfQuestions;
                 
         for (int i = 0; i < noOfQuestions; i++) {
-            TrueFalseQuestion question = new TrueFalseQuestion();
+            Question question = new Question();
             this.questions.add(question);
             System.out.println(question.getQuestion());        
         }        
     }
     
     public Quiz(String pokemonName, int noOfQuestions) {
+        this.questions = new ArrayList<>();
+        this.noOfQuestions = noOfQuestions;
         Request request = new Request();               
         Pokemon pokemon = request.searchPokemon(pokemonName); 
         
         int i = 0;        
         while (i < noOfQuestions) {
             try {
-                TrueFalseQuestion question = new TrueFalseQuestion(pokemon);
+                Question question = new Question(pokemon);
                 this.questions.add(question);
                 i++;
                 System.out.println(question.getQuestion());
@@ -35,6 +36,7 @@ public class Quiz {
                 e.getMessage();
                 e.printStackTrace();
             }
+            i++;
         }             
     }
     
@@ -43,7 +45,7 @@ public class Quiz {
         
         //ask each question and record the answers
         for (int i = 0; i < questions.size(); i++) {
-            TrueFalseQuestion currentQuestion = questions.get(i);
+            Question currentQuestion = questions.get(i);
             System.out.println("Question " + (i+1));
             System.out.println(currentQuestion.getQuestion());
             String userInput = scanner.nextLine();
@@ -69,11 +71,11 @@ public class Quiz {
         System.out.println("Score: " + this.score + "/" + this.noOfQuestions);
     }
     
-    public int checkAnswers(ArrayList<TrueFalseQuestion> questions) {
+    public int checkAnswers(ArrayList<Question> questions) {
         int score = 0;
         
         for (int i = 0; i < questions.size(); i++) {
-            TrueFalseQuestion currentQuestion = questions.get(i);
+            Question currentQuestion = questions.get(i);
             
             Boolean result = currentQuestion.checkAnswer();
             

@@ -1,6 +1,6 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
-public class StatSimple {
+public class ItemSimple {
     private String name;
     private String url;
 
@@ -10,11 +10,11 @@ public class StatSimple {
 
     public String getUrl() {
         return url;
-    }    
+    }
 
     @Override
     public String toString() {
-        return "StatSimple{" + "name=" + name + ", url=" + url + '}';
+        return "ItemSimple{" + "name=" + name + ", url=" + url + '}';
     }
     
 }

@@ -1,6 +1,6 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
-public class PokemonForm {
+public class MoveSimple {
     private String name;
     private String url;
 
@@ -14,7 +14,7 @@ public class PokemonForm {
 
     @Override
     public String toString() {
-        return "PokemonForm{" + "name=" + name + ", url=" + url + '}';
+        return "MoveSimple{" + "name=" + name + ", url=" + url + '}';
     }
     
     

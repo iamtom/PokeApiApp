@@ -1,6 +1,6 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
-public class AbilitySimple {
+public class VersionSimple {
     private String name;
     private String url;
 
@@ -14,9 +14,8 @@ public class AbilitySimple {
 
     @Override
     public String toString() {
-        return "AbilitySimple{" + "name=" + name + ", url=" + url + '}';
+        return "GameVersion{" + "name=" + name + ", url=" + url + '}';
     }
-
     
     
 }

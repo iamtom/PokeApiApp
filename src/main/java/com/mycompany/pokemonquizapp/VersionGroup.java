@@ -1,6 +1,6 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
-public class Generation {
+public class VersionGroup {
     private String name;
     private String url;
 
@@ -10,11 +10,10 @@ public class Generation {
 
     public String getUrl() {
         return url;
-    }     
+    }
 
     @Override
     public String toString() {
-        return "Generation{" + "name=" + name + ", url=" + url + '}';
-    }
-    
+        return "VersionGroup{" + "name=" + name + ", url=" + url + '}';
+    }      
 }

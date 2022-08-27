@@ -1,4 +1,4 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
 import com.google.gson.Gson;
 import java.io.IOException;

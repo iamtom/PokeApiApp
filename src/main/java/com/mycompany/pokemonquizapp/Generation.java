@@ -1,6 +1,6 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
-public class Species {
+public class Generation {
     private String name;
     private String url;
 
@@ -10,12 +10,11 @@ public class Species {
 
     public String getUrl() {
         return url;
-    }
+    }     
 
     @Override
     public String toString() {
-        return this.name + ", " + this.url;
+        return "Generation{" + "name=" + name + ", url=" + url + '}';
     }
-    
     
 }

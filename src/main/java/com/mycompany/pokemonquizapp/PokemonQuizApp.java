@@ -1,8 +1,8 @@
-package com.mycompany.pokeapiapp;
+package com.mycompany.pokemonquizapp;
 
 import java.util.Scanner;
 
-public class PokeApiApp {
+public class PokemonQuizApp {
 
     public static void main(String[] args) {  
         Scanner scanner = new Scanner(System.in);
