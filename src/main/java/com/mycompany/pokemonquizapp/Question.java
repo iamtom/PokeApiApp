@@ -10,19 +10,21 @@ public class Question {
     
     //random Move questions about a specific pokemon
     //some of this can be put into separate methods for re-use
-    public Question(Pokemon pokemon) {  
+    public Question(Pokemon pokemon) throws Exception {  
         this.pokemon = pokemon; 
         pokemon.removeMovesBelowLevel(5); 
         
         if (pokemon.getMoves().isEmpty()) {
-            //TODO error - request new pokemon
-            System.out.println("Moves is empty!");
+            throw new Exception("Pokemon has no moves!");            
         }
         
         //choose random move
         int maxMoves = pokemon.getMoves().size();
         Random random = new Random();
-        int randomMoveNo = random.nextInt(maxMoves - 1);
+        int randomMoveNo = 0;
+        if (maxMoves > 1) {
+            randomMoveNo = random.nextInt(maxMoves - 1);
+        }
         PokemonMove move = pokemon.getMoves().get(randomMoveNo);
         
         //choose random version
@@ -35,9 +37,15 @@ public class Question {
         
         //get the necessary details
         String pokemonName = pokemon.getName();
+        pokemonName = StringFormatter.format(pokemonName);
         String moveName = move.getMoveInfo().getName();
+        moveName = StringFormatter.format(moveName);
         int levelLearnedAt = versionDetails.getLevelLearnedAt();
         String versionName = versionDetails.getVersionGroup().getName();
+        versionName = StringFormatter.format(versionName);
+        
+        //formatting
+        
         
         this.correctAnswer = true;
         if (random.nextInt(10) >= 5) {

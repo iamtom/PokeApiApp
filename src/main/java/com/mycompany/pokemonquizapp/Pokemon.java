@@ -148,13 +148,5 @@ public class Pokemon {
 
     public Double getWeight() {
         return weight;
-    }
-
-
-    
-    
-    
-    
-    
-    
+    }  
 }

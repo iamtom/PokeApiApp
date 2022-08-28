@@ -8,19 +8,29 @@ public class Quiz {
     public int noOfQuestions; 
     public ArrayList<Question> questions;
     
-    //random move quiz on multiple random pokemon
+    //random move quiz on multiple random pokemon   
     public Quiz(int noOfQuestions) {
         this.questions = new ArrayList<>();
         this.noOfQuestions = noOfQuestions;
         Request request = new Request();
-
-                
-        for (int i = 0; i < noOfQuestions; i++) {
+        int questionsMade = 0;
+        
+        while (questionsMade < noOfQuestions) {
             Pokemon pokemon = request.randomPokemon();
-            Question question = new Question(pokemon);
+            Question question;
+            
+            try {
+                question = new Question(pokemon);
+            } catch (Exception e) {
+                //a problem will occur if the pokemon has no moves so start again
+                System.out.println(e.getMessage());
+                continue;
+            }
+            
             this.questions.add(question);
-            System.out.println(question.getQuestion());        
-        }        
+            //System.out.println(question.getQuestion());              
+            questionsMade++;
+        }      
     }
     
     //random move quiz on a specific pokemon
@@ -28,28 +38,28 @@ public class Quiz {
         this.questions = new ArrayList<>();
         this.noOfQuestions = noOfQuestions;
         Request request = new Request();               
-        Pokemon pokemon = request.searchPokemon(pokemonName); 
-  
+        Pokemon pokemon = request.searchPokemon(pokemonName);   
             
         for (int i = 0; i < noOfQuestions; i++) {
             try {
                 Question question = new Question(pokemon);
                 this.questions.add(question);
-                System.out.println(question.getQuestion());
+                //System.out.println(question.getQuestion());
             } catch (Exception e) {
-                e.getMessage();
-                e.printStackTrace();
+                System.out.println(e.getMessage());
+                break;
             }
         }             
     }
     
     public void runQuiz() {
         Scanner scanner = new Scanner(System.in);
+        int questionNo = 0;
         
         //ask each question and record the answers
-        for (int i = 0; i < questions.size(); i++) {
-            Question currentQuestion = questions.get(i);
-            System.out.println("Question " + (i+1));
+        while (questionNo < questions.size()) {
+            Question currentQuestion = questions.get(questionNo);
+            System.out.println("Question " + (questionNo+1));
             System.out.println(currentQuestion.getQuestion());
             String userInput = scanner.nextLine();
             
@@ -59,9 +69,10 @@ public class Quiz {
                 currentQuestion.setUserAnswer(userAnswer);
             } else {
                 System.out.println("Answer not valid.");
+                continue;
             }
             
-            
+            questionNo++;
         }
         
         System.out.println("Now checking your answers...");
@@ -75,7 +86,7 @@ public class Quiz {
     }
     
     public int checkAnswers(ArrayList<Question> questions) {
-        int score = 0;
+        this.score = 0;
         
         for (int i = 0; i < questions.size(); i++) {
             Question currentQuestion = questions.get(i);
@@ -83,14 +94,11 @@ public class Quiz {
             Boolean result = currentQuestion.checkAnswer();
             
             if (result.equals(true)) {
-                score++;
+                this.score++;
             }
             
         }
         
-        return score;
-    }
-    
-    
-    
+        return this.score;
+    }  
 }

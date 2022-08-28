@@ -97,7 +97,7 @@ public class Request {
         
         Random random = new Random();
         int x = random.nextInt(max + 1);
-        System.out.println("Random ID: " + x);
+        //System.out.println("Random ID: " + x);
         
         Pokemon pokemon = searchPokemon(x);
         
