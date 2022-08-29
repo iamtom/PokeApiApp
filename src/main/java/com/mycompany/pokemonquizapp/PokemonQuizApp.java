@@ -18,8 +18,13 @@ public class PokemonQuizApp {
             userInput = Integer.valueOf(scanner.nextLine());
 
             switch (userInput) {
-                case 1: 
-                    specificQuiz();
+                case 1:
+                    try {
+                        specificQuiz();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                        System.out.println("Something went wrong. Please check spelling.");                      
+                    }
                     break;
                 case 2:
                     randomQuiz();
@@ -46,7 +51,7 @@ public class PokemonQuizApp {
         System.out.println("How many questions would you like to answer?");
         System.out.println("Enter a number and press enter:");
         int noOfQuestions = Integer.valueOf(scanner.nextLine());
-
+        
         Quiz quiz = new Quiz(pokemonName, noOfQuestions);
         quiz.runQuiz();                
     }

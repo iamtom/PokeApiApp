@@ -37,9 +37,9 @@ public class Quiz {
     public Quiz(String pokemonName, int noOfQuestions) {
         this.questions = new ArrayList<>();
         this.noOfQuestions = noOfQuestions;
-        Request request = new Request();               
-        Pokemon pokemon = request.searchPokemon(pokemonName);   
-            
+        Request request = new Request();
+        Pokemon pokemon = request.searchPokemon(pokemonName); 
+ 
         for (int i = 0; i < noOfQuestions; i++) {
             try {
                 Question question = new Question(pokemon);

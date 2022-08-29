@@ -22,7 +22,7 @@ public class Request {
         //Pokemon names must be lower case or we get a 404
         //To lower case here rather than in all other search methods
         address = address.toLowerCase();
-        
+
         try {
             HttpClient httpClient = HttpClient.newHttpClient();            
             
@@ -36,11 +36,8 @@ public class Request {
 
             //send the httpRequest (bodyhandlers.ofString tells it we expect a string in return)
             postResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            
-            //System.out.println(postResponse.statusCode()); //200 = found, 404 = not found
-            //TO DO handle error codes with catch
-            
-            jsonString = postResponse.body(); 
+
+            jsonString = postResponse.body();
 
         } catch (IOException | InterruptedException | URISyntaxException ex) {
             Logger.getLogger(Request.class.getName()).log(Level.SEVERE, null, ex);
@@ -64,7 +61,7 @@ public class Request {
         String response = pokemonAsJson(searchFor);
                
         Gson gson = new Gson();
-
+        
         Pokemon pokemon = gson.fromJson(response, Pokemon.class);
         return pokemon;        
     }
