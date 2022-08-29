@@ -1,4 +1,4 @@
-package com.mycompany.pokemonquizapp;
+package com.mycompany.pokemon;
 
 public class VersionSimple {
     private String name;

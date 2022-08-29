@@ -1,4 +1,4 @@
-package com.mycompany.pokemonquizapp;
+package com.mycompany.pokemon;
 
 public class Generation {
     private String name;

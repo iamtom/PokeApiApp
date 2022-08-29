@@ -1,5 +1,8 @@
 package com.mycompany.pokemonquizapp;
 
+import com.mycompany.pokemon.MoveVersionGroupDetails;
+import com.mycompany.pokemon.PokemonMove;
+import com.mycompany.pokemon.Pokemon;
 import java.util.Random;
 
 public class Question {

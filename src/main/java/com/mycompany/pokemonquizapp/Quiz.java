@@ -1,5 +1,6 @@
 package com.mycompany.pokemonquizapp;
 
+import com.mycompany.pokemon.Pokemon;
 import java.util.ArrayList;
 import java.util.Scanner;
 

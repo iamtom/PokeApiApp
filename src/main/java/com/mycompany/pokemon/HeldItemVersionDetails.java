@@ -1,4 +1,4 @@
-package com.mycompany.pokemonquizapp;
+package com.mycompany.pokemon;
 
 public class HeldItemVersionDetails {
     private String rarity;

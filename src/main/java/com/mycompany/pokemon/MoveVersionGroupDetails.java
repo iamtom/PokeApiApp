@@ -1,5 +1,6 @@
-package com.mycompany.pokemonquizapp;
+package com.mycompany.pokemon;
 
+import com.mycompany.pokemon.MoveLearnMethod;
 import com.google.gson.annotations.SerializedName;
 
 public class MoveVersionGroupDetails {

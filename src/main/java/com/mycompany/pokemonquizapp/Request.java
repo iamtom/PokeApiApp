@@ -1,5 +1,6 @@
 package com.mycompany.pokemonquizapp;
 
+import com.mycompany.pokemon.Pokemon;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.net.URI;
