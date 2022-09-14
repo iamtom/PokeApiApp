@@ -47,9 +47,6 @@ public class Question {
         String versionName = versionDetails.getVersionGroup().getName();
         versionName = StringFormatter.format(versionName);
         
-        //formatting
-        
-        
         this.correctAnswer = true;
         if (random.nextInt(10) >= 5) {
             this.correctAnswer = false;

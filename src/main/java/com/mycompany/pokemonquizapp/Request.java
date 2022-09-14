@@ -13,6 +13,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Request {
+    
+    private Random random = new Random();
         
     public Request () {
         
@@ -93,13 +95,17 @@ public class Request {
     public Pokemon randomPokemon() {
         int max = noOfPokemon();
         
-        Random random = new Random();
-        int x = random.nextInt(max + 1);
+        int x = this.random.nextInt(max + 1);
         //System.out.println("Random ID: " + x);
         
         Pokemon pokemon = searchPokemon(x);
         
         return pokemon;
+    }
+    
+    //this method was created to enable testing
+    public void setRandomUtil(Random newRandom) {
+        this.random = newRandom;
     }
     
     
