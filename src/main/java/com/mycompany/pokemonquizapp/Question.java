@@ -45,6 +45,20 @@ public class Question {
         moveName = StringFormatter.format(moveName);
         int levelLearnedAt = versionDetails.getLevelLearnedAt();
         String versionName = versionDetails.getVersionGroup().getName();
+        
+        String versionEnd;        
+        switch(versionName) {
+            case "colosseum":
+                versionEnd = ".";
+                break;
+            case "xd":
+                versionEnd = ".";
+                versionName = "XD";
+                break;
+            default:
+                versionEnd = " version(s).";
+        }       
+        
         versionName = StringFormatter.format(versionName);
         
         this.correctAnswer = true;
@@ -53,10 +67,12 @@ public class Question {
             levelLearnedAt = random.nextInt(101); //because max level is 100
             //System.out.println("Level learned changed and answer changed to false:");
         }
+        
+
 
         this.question = pokemonName + " learns " + moveName + 
                 " at level " + levelLearnedAt + " in " + versionName + 
-                " version(s). True or false?";  
+                versionEnd + " True or false?";  
     }
 
     public String getQuestion() {
