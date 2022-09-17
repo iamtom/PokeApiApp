@@ -3,7 +3,6 @@ package com.mycompany.pokemonquizapp;
 public class StringFormatter {
     public static String format(String input) {
         //the API returns lower case strings with "-" instead of spaces
-        //this method makes it look better
         //e.g. flare-blitz becomes Flare Blitz
         String result;
         
