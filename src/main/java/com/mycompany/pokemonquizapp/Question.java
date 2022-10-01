@@ -70,19 +70,16 @@ public class Question {
             //System.out.println("Level learned changed and answer changed to false:");
         }
         
-        this.setQuestion(pokemonName, moveName, levelLearnedAt, versionName, versionEnd);
-    }
-    
-    public String getQuestion() {
-        return question;
-    }
-    
-    private void setQuestion(String pokemonName, String moveName, int levelLearnedAt, String versionName, String versionEnd) {
+        //this.setQuestion(pokemonName, moveName, levelLearnedAt, versionName, versionEnd);
         this.question = pokemonName + " learns " + moveName + 
                 " at level " + levelLearnedAt + " in " + versionName + 
                 versionEnd + " True or false?"; 
     }
     
+    public String getQuestion() {
+        return question;
+    }
+       
     public Boolean checkAnswer() {
         Boolean checkResult = null;
         

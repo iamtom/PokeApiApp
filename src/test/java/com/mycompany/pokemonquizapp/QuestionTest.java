@@ -49,23 +49,11 @@ public class QuestionTest {
     }
 
     /**
-     * Test of getQuestion method, of class Question.
-     */
-    @Test
-    public void testGetQuestion() {
-        System.out.println("Running: getQuestion test");
-        String expResult = "Bulbasaur learns Solar Beam at level 46 in Ruby & Sapphire version(s). True or false?";
-        String result = question.getQuestion();        
-        System.out.println("Result: " + result);
-        
-        assertEquals(expResult, result);
-    }
-
-    /**
      * Test of checkAnswer method, of class Question.
      */
     @Test
     public void testCheckAnswer() {
+        //Check for both correct and incorrect answers
         System.out.println("checkAnswer");
         Question instance = null;
         Boolean expResult = null;
