@@ -13,9 +13,9 @@ import static org.mockito.Mockito.when;
 
 public class RequestTest {
     
-    public RequestTest() {
-    }
+    private Request request;
     
+   
     @BeforeAll
     public static void setUpClass() {
     }
@@ -26,10 +26,15 @@ public class RequestTest {
     
     @BeforeEach
     public void setUp() {
+        System.out.println("Running: set up");
+        request = new Request();
     }
     
     @AfterEach
     public void tearDown() {
+        System.out.println("Running: tear down");
+        request = null;
+        assertNull(request);
     }
 
     /**
@@ -83,10 +88,9 @@ public class RequestTest {
      */
     @Test
     public void testNoOfPokemon() {
-        System.out.println("noOfPokemon");
-        Request instance = new Request();
+        System.out.println("Running: noOfPokemon test");
         int expResult = 905;
-        int result = instance.noOfPokemon();
+        int result = request.noOfPokemon();
         assertEquals(expResult, result);   
     }
 
@@ -95,10 +99,9 @@ public class RequestTest {
      */
     @Test
     public void testRandomPokemon() {       
-        System.out.println("randomPokemon");
+        System.out.println("Running: randomPokemon test");
         String expName = "bulbasaur";
-
-        Request request = new Request();              
+            
         int max = request.noOfPokemon();
         
         Random fakeRandom = mock(Random.class);

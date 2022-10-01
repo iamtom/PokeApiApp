@@ -14,10 +14,10 @@ import java.util.logging.Logger;
 
 public class Request {
     
-    private Random random = new Random();
+    private Random random;
         
     public Request () {
-        
+        this.random = new Random();
     }
     
     private String search(String address) {
@@ -103,7 +103,7 @@ public class Request {
         return pokemon;
     }
     
-    //this method was created to enable testing
+    //this method was created to enable testing using a mock Random
     public void setRandomUtil(Random newRandom) {
         this.random = newRandom;
     }

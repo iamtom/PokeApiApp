@@ -1,7 +1,7 @@
 package com.mycompany.pokemonquizapp;
 
 public class StringFormatter {
-    public static String format(String input) {
+    public static String basicFormat(String input) {
         //the API returns lower case strings with "-" instead of spaces
         //e.g. flare-blitz becomes Flare Blitz
         String result;
@@ -19,5 +19,19 @@ public class StringFormatter {
         result = String.join(" ", array);
         
         return result;
+    }
+    
+    public static String formatVersionName(String input) {
+        String versionName = basicFormat(input);
+        
+        if (versionName.contains(" ")) {
+            versionName = versionName.replace(" ", " & ");
+        }
+        
+        if (versionName.equals("xd")) {
+            versionName = "XD";
+        }
+              
+        return versionName;
     }
 }

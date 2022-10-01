@@ -6,10 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 public class StringFormatterTest {
     
     @Test
-    public void testFormat() {
-        System.out.println("format");
+    public void testBasicFormat() {
+        System.out.println("format test");
         String original = "fire-blast";
-        String result = StringFormatter.format(original);
+        String result = StringFormatter.basicFormat(original);
         String expResult = "Fire Blast";
         assertEquals(expResult, result);
     }
