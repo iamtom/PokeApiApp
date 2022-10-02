@@ -96,4 +96,9 @@ public class Question {
     public void setUserAnswer(Boolean userAnswer) {
         this.userAnswer = userAnswer;
     }
+    
+    //for testing purposes
+    public void setCorrectAnswer(Boolean correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
 }
