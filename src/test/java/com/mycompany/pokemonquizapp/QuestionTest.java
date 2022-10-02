@@ -1,12 +1,15 @@
 package com.mycompany.pokemonquizapp;
 
 import com.mycompany.pokemon.Pokemon;
+import java.util.Random;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class QuestionTest {
     
@@ -28,7 +31,14 @@ public class QuestionTest {
         request = new Request();
         pokemon = request.searchPokemon(1);
         
-        //TODO make it create the same question each time
+        int maxMoves = pokemon.getMoves().size();        
+        Random fakeRandom = mock(Random.class);
+        when(fakeRandom.nextInt(maxMoves - 1)).thenReturn(4); //this is Vine Whip                
+        pokemon.setRandomUtil(fakeRandom);
+        
+        //Make pokemon always return same random move
+        //therefore can test all properties of the Question to check constructor works
+        //except the random change of correct answer...
         try {
             question = new Question(pokemon);
         } catch (Exception e) {
@@ -48,9 +58,12 @@ public class QuestionTest {
         assertNull(question);
     }
 
-    /**
-     * Test of checkAnswer method, of class Question.
-     */
+    @Test
+    public void testConstructor() {
+        
+    }
+    
+    
     @Test
     public void testCheckAnswer() {
         System.out.println("Running: checkAnswer test");

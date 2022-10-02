@@ -40,7 +40,7 @@ public class RequestTest {
     /**
      * Test of pokemonAsJson method, of class Request.
      */
-    @Test
+    //@Test
     public void testPokemonAsJson() {
         System.out.println("pokemonAsJson");
         String searchFor = "";
@@ -56,7 +56,7 @@ public class RequestTest {
     /**
      * Test of searchPokemon method, of class Request.
      */
-    @Test
+    //@Test
     public void testSearchPokemon_String() {
         System.out.println("searchPokemon");
         String searchFor = "";
@@ -71,7 +71,7 @@ public class RequestTest {
     /**
      * Test of searchPokemon method, of class Request.
      */
-    @Test
+    //@Test
     public void testSearchPokemon_int() {
         System.out.println("searchPokemon");
         int id = 0;

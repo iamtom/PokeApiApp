@@ -16,30 +16,16 @@ public class Question {
     //some of this can be put into separate methods for re-use
     public Question(Pokemon pokemon) throws Exception { 
         this.random = new Random();
-        
+        System.out.println("No of moves " + pokemon.getMoves().size());
         pokemon.removeMovesBelowLevel(5); 
-        
+        System.out.println("No of moves " + pokemon.getMoves().size());
         if (pokemon.getMoves().isEmpty()) {
             throw new Exception("Error: Pokemon has no moves!");            
         }
         
-        //choose random move
-        int maxMoves = pokemon.getMoves().size();
-        //Random random = new Random();
-        int randomMoveNo = 0;
-        if (maxMoves > 1) {
-            randomMoveNo = random.nextInt(maxMoves - 1);
-        }
-        move = pokemon.getMoves().get(randomMoveNo);
-        
-        //choose random version
-        int maxVersions = move.getVersionGroupDetails().size();
-        int randomVersionNo = 0;
-        if (maxVersions > 1) {
-            randomVersionNo = random.nextInt(maxVersions - 1);
-        }        
-        MoveVersionGroupDetails versionDetails = move.getVersionGroupDetails().get(randomVersionNo);
-        
+        this.move = pokemon.randomMove();        
+        MoveVersionGroupDetails versionDetails = move.randomMoveVersionGroupDetails();
+               
         //get the necessary details
         String pokemonName = pokemon.getName();
         pokemonName = StringFormatter.basicFormat(pokemonName);

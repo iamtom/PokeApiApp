@@ -28,7 +28,7 @@ public class StringFormatter {
             versionName = versionName.replace(" ", " & ");
         }
         
-        if (versionName.equals("xd")) {
+        if (versionName.equals("Xd")) {
             versionName = "XD";
         }
               
