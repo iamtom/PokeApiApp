@@ -48,32 +48,23 @@ public class QuestionTest {
         assertNull(question);
     }
 
-    /**
-     * Test of checkAnswer method, of class Question.
-     */
     @Test
     public void testCheckAnswer() {
-        //Check for both correct and incorrect answers
-        System.out.println("checkAnswer");
-        Question instance = null;
-        Boolean expResult = null;
-        Boolean result = instance.checkAnswer();
+        System.out.println("Running: checkAnswer test");
+        
+        //Correct answer given
+        this.question.setCorrectAnswer(true);
+        this.question.setUserAnswer(true);
+        Boolean expResult = true;
+        Boolean result = this.question.checkAnswer();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setUserAnswer method, of class Question.
-     */
-    @Test
-    public void testSetUserAnswer() {
-        System.out.println("setUserAnswer");
-        Boolean userAnswer = null;
-        Question instance = null;
-        instance.setUserAnswer(userAnswer);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        //Incorrect answer given
+        this.question.setCorrectAnswer(true);
+        this.question.setUserAnswer(false);
+        expResult = false;
+        result = this.question.checkAnswer();
+        assertEquals(expResult, result);  
     }
     
 }
