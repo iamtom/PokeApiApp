@@ -8,6 +8,7 @@ import java.util.Random;
 public class Question {
     private String question;
     private PokemonMove move;
+    private MoveVersionGroupDetails versionDetails;
     private Boolean correctAnswer;
     private Boolean userAnswer;
     private Random random;
@@ -38,7 +39,7 @@ public class Question {
         if (maxVersions > 1) {
             randomVersionNo = random.nextInt(maxVersions - 1);
         }        
-        MoveVersionGroupDetails versionDetails = move.getVersionGroupDetails().get(randomVersionNo);
+        versionDetails = move.getVersionGroupDetails().get(randomVersionNo);
         
         //get the necessary details
         String pokemonName = pokemon.getName();
