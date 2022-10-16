@@ -61,7 +61,7 @@ public class Quiz {
         while (questionNo < questions.size()) {
             Question currentQuestion = questions.get(questionNo);
             System.out.println("Question " + (questionNo+1));
-            System.out.println(currentQuestion.getQuestion());
+            System.out.println(currentQuestion.getQuestionText());
             String userInput = scanner.nextLine();
             
             //convert user input to Boolean and save the answer

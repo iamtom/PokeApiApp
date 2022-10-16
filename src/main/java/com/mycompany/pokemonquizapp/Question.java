@@ -6,7 +6,7 @@ import com.mycompany.pokemon.Pokemon;
 import java.util.Random;
 
 public class Question {
-    private String question;
+    private String questionText;
     private PokemonMove move;
     private MoveVersionGroupDetails versionDetails;
     private Boolean correctAnswer;
@@ -24,22 +24,9 @@ public class Question {
             throw new Exception("Error: Pokemon has no moves!");            
         }
         
-        //choose random move
-        int maxMoves = pokemon.getMoves().size();
-        //Random random = new Random();
-        int randomMoveNo = 0;
-        if (maxMoves > 1) {
-            randomMoveNo = random.nextInt(maxMoves - 1);
-        }
-        move = pokemon.getMoves().get(randomMoveNo);
-        
-        //choose random version
-        int maxVersions = move.getVersionGroupDetails().size();
-        int randomVersionNo = 0;
-        if (maxVersions > 1) {
-            randomVersionNo = random.nextInt(maxVersions - 1);
-        }        
-        versionDetails = move.getVersionGroupDetails().get(randomVersionNo);
+        move = pokemon.randomMove();
+
+        versionDetails = move.randomMoveVersionGroupDetails();
         
         //get the necessary details
         String pokemonName = pokemon.getName();
@@ -72,13 +59,13 @@ public class Question {
         }
         
         //this.setQuestion(pokemonName, moveName, levelLearnedAt, versionName, versionEnd);
-        this.question = pokemonName + " learns " + moveName + 
+        this.questionText = pokemonName + " learns " + moveName + 
                 " at level " + levelLearnedAt + " in " + versionName + 
                 versionEnd + " True or false?"; 
     }
     
-    public String getQuestion() {
-        return question;
+    public String getQuestionText() {
+        return questionText;
     }
        
     public Boolean checkAnswer() {

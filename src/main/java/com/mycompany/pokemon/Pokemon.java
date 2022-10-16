@@ -2,6 +2,7 @@ package com.mycompany.pokemon;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Pokemon {   
     private ArrayList<PokemonAbilityInfo> abilities; 
@@ -40,6 +41,12 @@ public class Pokemon {
     private ArrayList<PokemonType> types;
     private Double weight;
     
+    private transient Random random;
+    
+    public Pokemon() {
+        this.random = new Random();
+    }
+    
     public ArrayList<PokemonMove> movesContainingMinLevel(int minLevel) {
         ArrayList<PokemonMove> movesList = this.moves;
         ArrayList<PokemonMove> filteredMoves = new ArrayList<>();
@@ -76,6 +83,19 @@ public class Pokemon {
             }
         }
         this.moves = new ArrayList<>(tempList);
+    }
+    
+    public PokemonMove randomMove() {        
+        int maxMoves = this.getMoves().size();
+        
+        int randomMoveNo = 0;
+        if (maxMoves > 1) {
+            randomMoveNo = random.nextInt(maxMoves - 1);
+        }
+        
+        PokemonMove move = this.getMoves().get(randomMoveNo); 
+        
+        return move;
     }
 
     public ArrayList<PokemonAbilityInfo> getAbilities() {
