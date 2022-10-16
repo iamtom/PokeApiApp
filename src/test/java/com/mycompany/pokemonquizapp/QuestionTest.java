@@ -32,7 +32,7 @@ public class QuestionTest {
         try {
             question = new Question(pokemon);
         } catch (Exception e) {
-            //exception won't happen as it is known this Pokemon has moves
+            System.out.println(e.getMessage());
         }      
     }
     
