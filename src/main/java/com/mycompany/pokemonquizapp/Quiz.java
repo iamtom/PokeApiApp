@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Quiz {
-    public int score;
-    public int noOfQuestions; 
-    public ArrayList<Question> questions;
+    private int score;
+    private int noOfQuestions; 
+    private ArrayList<Question> questions;
     
     //random move quiz on multiple random pokemon   
     public Quiz(int noOfQuestions) {
