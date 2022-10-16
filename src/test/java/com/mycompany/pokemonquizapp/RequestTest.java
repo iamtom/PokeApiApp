@@ -36,11 +36,8 @@ public class RequestTest {
         request = null;
         assertNull(request);
     }
-
-    /**
-     * Test of pokemonAsJson method, of class Request.
-     */
-    @Test
+    
+    @Test //TO DO
     public void testPokemonAsJson() {
         System.out.println("pokemonAsJson");
         String searchFor = "";
@@ -52,40 +49,32 @@ public class RequestTest {
         fail("The test case is a prototype.");
     }
     
-    //TODO
-    /**
-     * Test of searchPokemon method, of class Request.
-     */
     @Test
     public void testSearchPokemon_String() {
-        System.out.println("searchPokemon");
-        String searchFor = "";
-        Request instance = new Request();
-        Pokemon expResult = null;
-        Pokemon result = instance.searchPokemon(searchFor);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Running: searchPokemon(String searchFor) test");
+        String searchFor = "bulbasaur";
+        
+        String expName = "bulbasaur";
+        
+        Pokemon pokemon = request.searchPokemon(searchFor);
+        String name = pokemon.getName();
+        
+        assertEquals(expName, name);
     }
     
-    /**
-     * Test of searchPokemon method, of class Request.
-     */
     @Test
     public void testSearchPokemon_int() {
-        System.out.println("searchPokemon");
-        int id = 0;
-        Request instance = new Request();
-        Pokemon expResult = null;
-        Pokemon result = instance.searchPokemon(id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Running: searchPokemon(int id) test");
+        int id = 1;
+        
+        String expName = "bulbasaur";
+        
+        Pokemon pokemon = request.searchPokemon(id);
+        String name = pokemon.getName();
+        
+        assertEquals(expName, name);
     }
     
-    /**
-     * Test of noOfPokemon method, of class Request.
-     */
     @Test
     public void testNoOfPokemon() {
         System.out.println("Running: noOfPokemon test");
@@ -94,9 +83,6 @@ public class RequestTest {
         assertEquals(expResult, result);   
     }
 
-    /**
-     * Test of randomPokemon method, of class Request.
-     */
     @Test
     public void testRandomPokemon() {       
         System.out.println("Running: randomPokemon test");

@@ -33,7 +33,7 @@ public class QuestionTest {
             question = new Question(pokemon);
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }      
+        }              
     }
     
     @AfterEach
@@ -66,5 +66,5 @@ public class QuestionTest {
         result = this.question.checkAnswer();
         assertEquals(expResult, result);  
     }
-    
+  
 }
