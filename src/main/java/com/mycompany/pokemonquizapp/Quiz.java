@@ -63,13 +63,14 @@ public class Quiz {
             System.out.println("Question " + (questionNo+1));
             System.out.println(currentQuestion.getQuestionText());
             String userInput = scanner.nextLine();
+            System.out.println("");
             
             //convert user input to Boolean and save the answer
             if (userInput.equalsIgnoreCase("true") || userInput.equalsIgnoreCase("false")) {
                 Boolean userAnswer = Boolean.valueOf(userInput);
                 currentQuestion.setUserAnswer(userAnswer);
             } else {
-                System.out.println("Answer not valid.");
+                System.out.println("Answer not valid.\n");
                 continue;
             }
             
