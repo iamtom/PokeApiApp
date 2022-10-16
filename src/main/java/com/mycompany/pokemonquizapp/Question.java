@@ -6,11 +6,19 @@ import com.mycompany.pokemon.Pokemon;
 import java.util.Random;
 
 public class Question {
-    private String questionText;
+    private String pokemonName;
+    
     private PokemonMove move;
+    private String moveName;
     private MoveVersionGroupDetails versionDetails;
+    private String versionName;
+    private int levelLearnedAt;
+    
+    private String versionEnd;
+    
     private Boolean correctAnswer;
     private Boolean userAnswer;
+    
     private Random random;
     
     //random Move questions about a specific pokemon
@@ -29,14 +37,13 @@ public class Question {
         versionDetails = move.randomMoveVersionGroupDetails();
         
         //get the necessary details
-        String pokemonName = pokemon.getName();
+        pokemonName = pokemon.getName();
         pokemonName = StringFormatter.basicFormat(pokemonName);
-        String moveName = move.getMoveInfo().getName();
+        moveName = move.getMoveInfo().getName();
         moveName = StringFormatter.basicFormat(moveName);
-        int levelLearnedAt = versionDetails.getLevelLearnedAt();
-        String versionName = versionDetails.getVersionGroup().getName();
-        
-        String versionEnd;        
+        levelLearnedAt = versionDetails.getLevelLearnedAt();
+        versionName = versionDetails.getVersionGroup().getName();
+         
         switch(versionName) {
             case "colosseum":
                 versionEnd = ".";
@@ -57,15 +64,12 @@ public class Question {
             this.correctAnswer = false;
             //System.out.println("Level learned changed and answer changed to false:");
         }
-        
-        //this.setQuestion(pokemonName, moveName, levelLearnedAt, versionName, versionEnd);
-        this.questionText = pokemonName + " learns " + moveName + 
-                " at level " + levelLearnedAt + " in " + versionName + 
-                versionEnd + " True or false?"; 
     }
     
     public String getQuestionText() {
-        return questionText;
+        return pokemonName + " learns " + moveName + 
+                " at level " + levelLearnedAt + " in " + versionName + 
+                versionEnd + " True or false?";
     }
        
     public Boolean checkAnswer() {
