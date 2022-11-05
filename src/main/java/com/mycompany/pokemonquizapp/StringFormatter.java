@@ -22,6 +22,9 @@ public class StringFormatter {
     }
     
     public static String formatVersionName(String input) {
+        //TODO account for black-2-white-2, omega-ruby-alpha-sapphire, ultra-sun-ultra-moon
+        //lets-go-pikachu-lets-go-eevee, 
+        
         String versionName = basicFormat(input);
         
         if (versionName.contains(" ")) {
