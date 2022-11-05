@@ -1,8 +1,9 @@
 package com.mycompany.pokemonquizapp;
 
-import com.mycompany.pokemon.MoveVersionGroupDetails;
-import com.mycompany.pokemon.PokemonMove;
-import com.mycompany.pokemon.Pokemon;
+import com.mycompany.pokeapilibrary.StringFormatter;
+import com.mycompany.pokeapilibrary.pokemon.MoveVersionGroupDetails;
+import com.mycompany.pokeapilibrary.pokemon.PokemonMove;
+import com.mycompany.pokeapilibrary.pokemon.Pokemon;
 import java.util.Random;
 
 public class Question {

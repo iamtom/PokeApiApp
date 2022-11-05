@@ -1,6 +1,7 @@
 package com.mycompany.pokemonquizapp;
 
-import com.mycompany.pokemon.Pokemon;
+import com.mycompany.pokeapilibrary.Request;
+import com.mycompany.pokeapilibrary.pokemon.Pokemon;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
