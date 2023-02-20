@@ -1,7 +1,7 @@
 package com.mycompany.pokemonquizapp;
 
 import com.mycompany.pokeapilibrary.StringFormatter;
-import com.mycompany.pokeapilibrary.pokemon.MoveVersionGroupDetails;
+import com.mycompany.pokeapilibrary.pokemon.PokemonMoveVersion;
 import com.mycompany.pokeapilibrary.pokemon.PokemonMove;
 import com.mycompany.pokeapilibrary.pokemon.Pokemon;
 import java.util.Random;
@@ -11,7 +11,7 @@ public class Question {
     
     private PokemonMove move;
     private String moveName;
-    private MoveVersionGroupDetails versionDetails;
+    private PokemonMoveVersion versionDetails;
     private String versionName;
     private int levelLearnedAt;
     
@@ -40,7 +40,7 @@ public class Question {
         //get the necessary details
         pokemonName = pokemon.getName();
         pokemonName = StringFormatter.basicFormat(pokemonName);
-        moveName = move.getMoveInfo().getName();
+        moveName = move.getMove().getName();
         moveName = StringFormatter.basicFormat(moveName);
         levelLearnedAt = versionDetails.getLevelLearnedAt();
         versionName = versionDetails.getVersionGroup().getName();
